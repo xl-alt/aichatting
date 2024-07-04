@@ -1,7 +1,6 @@
 const express = require("express");
 const axios = require("axios");
 var bodyParser = require("body-parser");
-const { v4: uuidv4 } = require('uuid');
 const { encode, decode } = require('gpt-3-encoder');
 // 创建一个Express应用实例
 const app = express();
@@ -13,9 +12,7 @@ const PORT = 3001;
 app.get("/", (req, res) => {
     res.send("欢迎来到Node.js Express应用！");
 });
-function generateUuid() {
-    return uuidv4();
-}
+
 // 随机谷歌账户
 // 传输一个 token 从 txt01 到 txt02
 function isJsonString(str) {
