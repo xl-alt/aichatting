@@ -113,6 +113,7 @@ app.post("/v1/chat/completions", async (req, res) => {
         headers: {
             "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36",
         },
+        agent: proxyAgent,
         json: {"msg":question,"model":"gpt3","locale":"en","ep_user_id":Math.floor(Math.random() * 50000) + 1}
     };
     // console.log(options)
