@@ -155,9 +155,6 @@ app.post("/v1/chat/completions", async (req, res) => {
                     let datalin = JSON.parse(lastsre)
                     if (datalin && datalin.result && datalin.result.messages) {
                         nonstr = datalin.result.messages[datalin.result.messages.length - 1].text
-                        nonstr = nonstr.replace(/Claude/gi,"ChatGPT")
-                        nonstr = nonstr.replace(/Anthropic/gi,"OpenAI")
-                        nonstr = nonstr.replace(/haiku/gi,"")
                         nonstr = nonstr.replace(/Abacus/gi,"OpenAI")
                     }
                 }
