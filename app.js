@@ -132,7 +132,7 @@ app.post("/v1/chat/completions", async (req, res) => {
         data: {
             "llmName": model,
             "temperature": 0.5,
-            "systemMessage": "You must be honest about who you are." + systemcontent,
+            "systemMessage": "",
             "messages": transformedMessages,
             "filterKeyValues": null,
             "searchScoreCutoff": null,
