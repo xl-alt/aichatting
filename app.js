@@ -91,7 +91,7 @@ app.post("/v1/chat/completions", async (req, res) => {
     let databody = req.body
     let index = 0
     databody.messages.forEach(element => {
-        if (element && element != "" && element != undefined && !databody.model.includes("vision")) {
+        if (element && element != "" && element != undefined && !databody.model.includes("vision") && element.content != undefined) {
             index += encode(JSON.stringify(element.content)).length;
         }
     });
