@@ -99,7 +99,7 @@ app.post("/v1/chat/completions", async (req, res) => {
 
     if (firstSystemContent != null) {
         systemcontent =
-            "Please strictly follow your default identity to answer user questions. The identity you assume is: " +
+            "You only need to answer user questions, no need to precede the answer with assistant. Please strictly follow your default identity to answer user questions. The identity you assume is: " +
             firstSystemContent;
     }
     let model = databody.model
@@ -132,7 +132,7 @@ app.post("/v1/chat/completions", async (req, res) => {
         data: {
             "llmName": model,
             "temperature": 0.5,
-            "systemMessage": "",
+            "systemMessage": systemcontent,
             "messages": transformedMessages,
             "filterKeyValues": null,
             "searchScoreCutoff": null,
