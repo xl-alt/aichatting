@@ -104,7 +104,7 @@ app.post("/v1/chat/completions", async (req, res) => {
             firstSystemContent;
     }
     let question = `system:You only need to answer user questions, no need to precede the answer with assistant.no search. ${systemcontent}  \n ${question1}`;
-    const proxyUrl = 'http://OQzXwbmh7D0tZkV:wNcbD0GSg8Qx9jj@103.229.116.151:45835';
+    const proxyUrl = 'http://ttBJnZAmxaCs6BO:bsDtTBWiEF8Kpe5@213.139.68.26:42465';
     // 创建HTTPS代理代理
     const proxyAgent = new HttpsProxyAgent(proxyUrl);
     const options = {
