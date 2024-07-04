@@ -103,7 +103,7 @@ app.post("/v1/chat/completions", async (req, res) => {
             "Please strictly follow your default identity to answer user questions. The identity you assume is: " +
             firstSystemContent;
     }
-    let question = `system: You only need to answer user questions, no need to precede the answer with assistant.no search. ${systemcontent}  \n ${question1}`;
+    let question = `system:You only need to answer user questions, no need to precede the answer with assistant.no search. ${systemcontent}  \n ${question1}`;
     const proxyUrl = 'http://OQzXwbmh7D0tZkV:wNcbD0GSg8Qx9jj@103.229.116.151:45835';
     // 创建HTTPS代理代理
     const proxyAgent = new HttpsProxyAgent(proxyUrl);
