@@ -66,7 +66,7 @@ const modelMap = {
     "claude-3-5-sonnet-20240620": "CLAUDE_V3_5_SONNET",
     "claude-2.1": "CLAUDE_V2_1",
     "claude-3-opus-20240229": "CLAUDE_V3_OPUS",
-    "claude-3-5-sonnet-20240620": "CLAUDE_V3_SONNET",
+    "claude-3-sonnet-20240620": "CLAUDE_V3_SONNET",
     "claude-3-haiku-20240307": "CLAUDE_V3_HAIKU",
     "gemini-1.5-pro": "GEMINI_1_5_PRO",
     "llama2-chat": "LLAMA2_CHAT",
@@ -104,7 +104,7 @@ app.post("/v1/chat/completions", async (req, res) => {
     }
     let model = databody.model
     if (databody.model.includes("3.5")) {
-        model = "gpt-3.5-turbo"
+        model = "claude-3-haiku-20240307"
     }
     model = getModelKey(model)
     let authHeader = req.headers['authorization'];
