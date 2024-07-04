@@ -104,7 +104,7 @@ app.post("/v1/chat/completions", async (req, res) => {
     }
     let model = databody.model
     if (databody.model.includes("3.5")) {
-        model = "claude-3-sonnet-20240620"
+        model = "claude-3-haiku-20240307"
     }
     model = getModelKey(model)
     let authHeader = req.headers['authorization'];
@@ -132,7 +132,7 @@ app.post("/v1/chat/completions", async (req, res) => {
         data: {
             "llmName": model,
             "temperature": 0.5,
-            "systemMessage": systemcontent,
+            "systemMessage": "",
             "messages": transformedMessages,
             "filterKeyValues": null,
             "searchScoreCutoff": null,
@@ -155,6 +155,9 @@ app.post("/v1/chat/completions", async (req, res) => {
                     let datalin = JSON.parse(lastsre)
                     if (datalin && datalin.result && datalin.result.messages) {
                         nonstr = datalin.result.messages[datalin.result.messages.length - 1].text
+                        nonstr = nonstr.replace(/Claude/gi,"ChatGPT")
+                        nonstr = nonstr.replace(/Anthropic/gi,"OpenAI")
+                        nonstr = nonstr.replace(/haiku/gi,"")
                     }
                 }
                 if (databody.stream == true) {
