@@ -104,7 +104,7 @@ app.post("/v1/chat/completions", async (req, res) => {
     }
     let model = databody.model
     if (databody.model.includes("3.5")) {
-        model = "claude-3-haiku-20240307"
+        model = "claude-3-sonnet-20240620"
     }
     model = getModelKey(model)
     let authHeader = req.headers['authorization'];
