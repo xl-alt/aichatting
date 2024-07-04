@@ -158,6 +158,7 @@ app.post("/v1/chat/completions", async (req, res) => {
                         nonstr = nonstr.replace(/Claude/gi,"ChatGPT")
                         nonstr = nonstr.replace(/Anthropic/gi,"OpenAI")
                         nonstr = nonstr.replace(/haiku/gi,"")
+                        nonstr = nonstr.replace(/Abacus/gi,"OpenAI")
                     }
                 }
                 if (databody.stream == true) {
